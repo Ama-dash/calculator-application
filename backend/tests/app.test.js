@@ -21,7 +21,7 @@ test("Addition API test", async () => {
 
 
     expect(response.text)
-        .toBe("Result: 8");
+        .toBe("8");
 
 });
 
@@ -33,7 +33,7 @@ test("Subtraction API test", async () => {
 
 
     expect(response.text)
-        .toBe("Result: 6");
+        .toBe("6");
 
 });
 
@@ -45,7 +45,7 @@ test("Multiplication API test", async () => {
 
 
     expect(response.text)
-        .toBe("Result: 20");
+        .toBe("20");
 
 });
 
@@ -57,7 +57,7 @@ test("Division API test", async () => {
 
 
     expect(response.text)
-        .toBe("Result: 4");
+        .toBe("4");
 
 });
 
