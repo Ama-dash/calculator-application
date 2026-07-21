@@ -1,0 +1,76 @@
+/* Whole page */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Main calculator card */
+.calculator {
+  width: 380px;
+  margin: 80px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Heading */
+.calculator h1 {
+  text-align: center;
+  color: #2563eb;
+  margin-bottom: 30px;
+}
+
+/* Labels */
+.calculator label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Input boxes */
+.calculator input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #cccccc;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Button row */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Buttons */
+.buttons button {
+  width: 70px;
+  height: 45px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.buttons button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.08);
+}
+
+/* Result */
+.result {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: green;
+}

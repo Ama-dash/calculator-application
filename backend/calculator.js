@@ -15,8 +15,8 @@ function divide(a, b) {
     if (b === 0) {
         return "Cannot divide by zero";
     }
-
-    return a / b;
+     
+    return Number((a / b).toFixed(3));
 }
 
 module.exports = {
