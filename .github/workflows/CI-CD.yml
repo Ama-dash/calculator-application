@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: read
+  security-events: write
 
 jobs:
   backend-test:
@@ -132,8 +133,8 @@ jobs:
                  push: false
                  tags: |
                    ${{ secrets.DOCKERHUB_USERNAME }}/calculator-frontend:latest
-                   cache-from: type=gha
-                   cache-to: type=gha,mode=max
+                 cache-from: type=gha
+                 cache-to: type=gha,mode=max
 
       
             - name: Scan frontend Image with Trivy
