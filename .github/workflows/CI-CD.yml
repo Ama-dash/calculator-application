@@ -49,16 +49,18 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/calculator-backend:latest .
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-      - name: Build Docker image
-        run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/calculator-backend:latest .
+      - name: Build and Push Backend Image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./backend
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/calculator-backend:latest
 
       
-      - name: Push Docker image
-        run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/calculator-backend:latest
 
   frontend-test:
         runs-on: ubuntu-latest
@@ -89,16 +91,16 @@ jobs:
                username: ${{ secrets.DOCKERHUB_USERNAME }}
                password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-            - name: Build Docker image
-              run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/calculator-frontend:latest .
+            - name: Setup Docker Buildx
+              uses: docker/setup-buildx-action@v3
 
-            - name: Build Docker image
-              run: docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/calculator-frontend:latest .
-
-      
-            - name: Push Docker image
-              run: |
-                   docker push ${{ secrets.DOCKERHUB_USERNAME }}/calculator-frontend:latest 
+            - name: Build and Push Backend Image
+              uses: docker/build-push-action@v6
+              with:
+               context: ./backend
+               push: true
+               tags: |
+                 ${{ secrets.DOCKERHUB_USERNAME }}/calculator-frontend:latest
 
 
             
